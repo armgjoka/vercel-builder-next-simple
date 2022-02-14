@@ -12,7 +12,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         customInsertMenu: true,
         hideABTab: true, 
       })
-      console.log('Settings changed!')
+      console.log('Settings changed 2!')
     }
   }, [])
   return <Component {...pageProps} />
