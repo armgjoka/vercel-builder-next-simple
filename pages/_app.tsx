@@ -6,7 +6,6 @@ builder.init(builderConfig.apiKey)
 
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-  useEffect( () => {
     if (Builder.isBrowser) {
       console.log('Set editor options');
       Builder.set({ 
@@ -15,6 +14,5 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       })
       console.log('Settings changed 2!')
     }
-  }, [])
   return <Component {...pageProps} />
 }
