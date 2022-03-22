@@ -8,6 +8,7 @@ builder.init(builderConfig.apiKey)
 export default function MyApp({ Component, pageProps }: AppProps) {
   useEffect( () => {
     if (Builder.isBrowser) {
+      console.log('Set editor options');
       Builder.set({ 
         customInsertMenu: true,
         hideABTab: true, 
