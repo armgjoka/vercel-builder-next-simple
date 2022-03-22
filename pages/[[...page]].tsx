@@ -63,6 +63,16 @@ export default function Page({
   if (router.isFallback) {
     return <h1>Loading...</h1>
   }
+
+  if (Builder.isBrowser) {
+      console.log('Page: Set editor options');
+      Builder.set({ 
+        customInsertMenu: true,
+        hideABTab: true, 
+      })
+      console.log('Page: Settings changed 2!')
+    }
+
   const isLive = !Builder.isEditing && !Builder.isPreviewing
   if (!page && isLive) {
     return (
