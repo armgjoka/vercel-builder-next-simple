@@ -6,16 +6,14 @@ builder.init(builderConfig.apiKey)
 
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-  const builderEnv = builder.env;
-  useEffect(() => {
-      Builder.set({ 
-        customInsertMenu: true,
-        hideABTab: true, 
-      })
-  }, [])
+  const builderSettings = JSON.stringify(Builder.settings, null, 2);
+  Builder.set({ 
+    customInsertMenu: true,
+    hideABTab: true, 
+  })
 
   return  <div>
-    <p>Component rendered {builderEnv}</p>
+    <p>Component rendered {builderSettings}</p>
     <Component {...pageProps} />
     </div>
 }
