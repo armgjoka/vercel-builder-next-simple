@@ -6,7 +6,7 @@ builder.init(builderConfig.apiKey)
 
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-
+  const builderEnv = builder.env;
   useEffect(() => {
       Builder.set({ 
         customInsertMenu: true,
@@ -15,7 +15,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   }, [])
 
   return  <div>
-    <p>Component rendered</p>
+    <p>Component rendered {builderEnv}</p>
     <Component {...pageProps} />
     </div>
 }
