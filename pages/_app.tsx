@@ -7,17 +7,25 @@ builder.init(builderConfig.apiKey)
 
 export default function MyApp({ Component, pageProps }: AppProps) {
 
-  const [settings, setSettings] = useState('');
-  
-  Builder.settingsChange.subscribe(r => setSettings(JSON.stringify(r, null, 2)))
-  
-  Builder.register('editor.settings', {
-    hideABTab: true,
-  })
-  
+/*   useEffect( () => {
+    if (Builder.isBrowser) {
+      console.log('Set editor options');
+      Builder.set({ 
+        customInsertMenu: true,
+        hideABTab: true, 
+      })
+      console.log('Settings changed 2!')
+    }
+  }, []) */
 
-  return  <div>
-    <p>Component rendered {settings}</p>
-    <Component {...pageProps} />
-    </div>
+  useEffect(() => {
+    if (Builder.isBrowser) {
+        Builder.register('editor.settings', {
+          hideABTab: true,
+          customInsertMenu: true,
+        })
+    }
+  }, []);
+
+  return  <Component {...pageProps} />
 }
