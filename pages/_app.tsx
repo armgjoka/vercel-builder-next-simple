@@ -6,14 +6,15 @@ builder.init(builderConfig.apiKey)
 
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-  useEffect( () => {
-    if (Builder.isBrowser) {
-      Builder.set({ 
+  // useEffect( () => {
+  //   if (Builder.isBrowser) {
+      // Builder.set({ 
+      Builder.register('editor.settings', {
         customInsertMenu: true,
         hideABTab: true, 
       })
-      console.log('Settings changed 2!')
-    }
-  }, [])
+  //     console.log('Settings changed 2!')
+  //   }
+  // }, [])
   return <Component {...pageProps} />
 }
