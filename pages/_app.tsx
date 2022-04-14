@@ -11,9 +11,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     if (Builder.isBrowser) {
       Builder.set({ 
      //   customInsertMenu: true,
-     //   hideABTab: true, 
+          hideABTab: true, 
       });
-      Builder.register('test.settings', {
+      Builder.register('test.settings2', {
              hideABTab: true,
           })
        Builder.register('editor.settings', {
