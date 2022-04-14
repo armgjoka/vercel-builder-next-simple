@@ -10,9 +10,17 @@ export default function MyApp({ Component, pageProps }: AppProps) {
  useEffect(() => {
     if (Builder.isBrowser) {
       Builder.set({ 
-         customInsertMenu: true,
-          hideABTab: true, 
+     //   customInsertMenu: true,
+    //      hideABTab: true, 
       });
+      Builder.register('test.settings2', {
+             hideABTab: true,
+             customInsertMenu: true,
+          })
+       Builder.register('editor.settings', {
+      //    hideABTab: true,
+      //    customInsertMenu: true,
+        })
       console.log('Settings changed 2!')
     }
   }, []) 
