@@ -13,10 +13,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
      //   customInsertMenu: true,
      //   hideABTab: true, 
       });
-      Builder.setCustomizations({
-        hideABTab: true
-      })
-
+      Builder.register('test.settings', {
+             hideABTab: true,
+          })
        Builder.register('editor.settings', {
       //    hideABTab: true,
           customInsertMenu: true,
