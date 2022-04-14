@@ -11,14 +11,16 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     if (Builder.isBrowser) {
       Builder.set({ 
      //   customInsertMenu: true,
-        hideABTab: true, 
+     //   hideABTab: true, 
       });
-      if (Builder.isBrowser) {
+      Builder.setCustomizations({
+        hideABTab: true
+      })
+
        Builder.register('editor.settings', {
       //    hideABTab: true,
           customInsertMenu: true,
         })
-   }
       console.log('Settings changed 2!')
     }
   }, []) 
