@@ -6,14 +6,6 @@ import Head from 'next/head'
 import "../components/SvgComponent";
 import "../components/Heading";
 
-Builder.register('insertMenu', {
-  name: 'Custom Components',
-  items: [
-    { name: 'Heading' },
-    { name: 'Custom SVG' }
-  ],
-})
-
 // tells you what paths are being built
 export async function getStaticProps({
   params,
@@ -22,6 +14,7 @@ export async function getStaticProps({
     (await builder
       .get('page', {
         cachebust: true,
+        includeRefs: true,
         userAttributes: {
           urlPath: '/' + (params?.page?.join('/') || ''),
         },
@@ -79,7 +72,7 @@ export default function Page({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      <BuilderComponent model="page" content={page} />
+      <BuilderComponent model="page" content={page} options={{includeRefs: true}}/>
     </>
   )
 }
