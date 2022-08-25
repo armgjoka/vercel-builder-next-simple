@@ -15,11 +15,14 @@ export async function getStaticProps({
       .get('page', {
         cachebust: true,
         includeRefs: true,
+        options: { includeRefs: true, noTraverse: false },
         userAttributes: {
           urlPath: '/' + (params?.page?.join('/') || ''),
         },
       })
       .toPromise()) || null
+
+  console.log('fetched on server: ', page)
 
   return {
     props: {
