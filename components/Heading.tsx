@@ -17,7 +17,8 @@ Builder.registerComponent(Heading, {
     {
       name: "title",
       type: "text",
-      defaultValue: 'I am a heading!'
+      defaultValue: 'I am a heading!',
+      required: true
     },
     {
       name: "image",
